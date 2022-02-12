@@ -15,7 +15,7 @@ const App = () => {
       return;
     }
 
-    axios.post('http://localhost:8000/signup', {
+    axios.post('http://localhost:5002/signup', {
       username,
       password,
     });
@@ -33,6 +33,7 @@ const App = () => {
           placeholder="username"
           id="usrnm"
           required
+          autoComplete="off"
           onChange={(e) => {
             setUsername(e.target.value);
           }}
@@ -43,6 +44,7 @@ const App = () => {
           placeholder="password"
           id="pswd"
           required
+          autoComplete="off"
           onChange={(e) => {
             setPassword(e.target.value);
           }}
@@ -53,11 +55,12 @@ const App = () => {
           placeholder="confirm password"
           id="cnfrm-pass"
           required
+          autoComplete="off"
           onChange={(e) => {
             setConfirmP(e.target.value);
           }}
         />
-        <input type={submit} />
+        <input type={submit} autoComplete="off" />
       </form>
       {<h1>{error}</h1>}
     </>
